@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Card</title>
+      <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffe6f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .card {
+      width: 300px;
+      height: 200px;
+      perspective: 1000px;
+    }
+
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 1s;
+      transform-style: preserve-3d;
+      cursor: pointer;
+    }
+
+    .card:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card-front, .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .card-front {
+      background: #ff69b4;
+      color: white;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .card-back {
+      background: white;
+      color: #333;
+      transform: rotateY(180deg);
+      flex-direction: column;
+    }
+
+    .balloons {
+      font-size: 32px;
+      animation: float 1s ease-in-out infinite alternate;
+    }
+
+    @keyframes float {
+      from { transform: translateY(0); }
+      to { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+      <div class="card">
+    <div class="card-inner">
+      <div class="card-front">
+        🎉 Happy Birthday!
+      </div>
+      <div class="card-back">
+        <div class="balloons">🎈🎂🎁</div>
+        <p>Wishing you joy, success,<br>and all the cake you can eat! 😄</p>
+      </div>
+    </div>
+  </div>
+    
+</body>
+</html>
