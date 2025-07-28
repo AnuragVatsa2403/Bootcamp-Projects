@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Website</title>
+</head>
+<style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  text-align: center;
+}
+
+.hero {
+  padding: 100px 20px 50px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in forwards;
+}
+
+.fade-in.delay {
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.btn {
+  margin-top: 20px;
+  padding: 12px 30px;
+  background: #ff4b2b;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 25px;
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s;
+}
+
+.btn:hover {
+  background: #ff3a1f;
+  transform: scale(1.05);
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 50px 20px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 10px;
+  width: 250px;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: floatUp 1s forwards;
+}
+
+.float.delay {
+  animation-delay: 0.5s;
+}
+
+.float.delay2 {
+  animation-delay: 1s;
+}
+
+@keyframes floatUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+<body>
+    <header class="hero">
+    <h1 class="fade-in">Welcome to AnimateX</h1>
+    <p class="fade-in delay">A smooth animated landing page using HTML & CSS only.</p>
+    <a href="#" class="btn bounce">Explore More</a>
+  </header>
+
+  <section class="cards">
+    <div class="card float">
+      <h2>Card 1</h2>
+      <p>This card floats up with animation.</p>
+    </div>
+    <div class="card float delay">
+      <h2>Card 2</h2>
+      <p>This card appears with a slight delay.</p>
+    </div>
+    <div class="card float delay2">
+      <h2>Card 3</h2>
+      <p>Staggered entrance animations with CSS only.</p>
+    </div>
+  </section>
+</body>
+</html>

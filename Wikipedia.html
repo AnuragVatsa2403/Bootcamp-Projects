@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f8f9fa;
+  color: #202122;
+}
+
+header {
+  background-color: #ffffff;
+  padding: 20px;
+  border-bottom: 1px solid #a2a9b1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 28px;
+  color: #3366cc;
+}
+
+#searchBar {
+  padding: 6px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+main {
+  display: flex;
+  padding: 20px;
+}
+
+.toc {
+  width: 200px;
+  padding-right: 20px;
+  border-right: 1px solid #ccc;
+}
+
+.toc h3 {
+  margin-bottom: 10px;
+}
+
+.toc ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.toc li {
+  margin: 8px 0;
+}
+
+.toc a {
+  text-decoration: none;
+  color: #0645ad;
+}
+
+article {
+  flex-grow: 1;
+  padding-left: 20px;
+}
+
+article section {
+  margin-bottom: 40px;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background: #eeeeee;
+  border-top: 1px solid #ccc;
+  font-size: 14px;
+}
+</style>
+<body>
+    <header>
+    <h1>WikiLite</h1>
+    <input type="text" id="searchBar" placeholder="Search article...">
+  </header>
+
+  <main>
+    <aside class="toc">
+      <h3>Contents</h3>
+      <ul>
+        <li><a href="#intro">Introduction</a></li>
+        <li><a href="#history">History</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#legacy">Legacy</a></li>
+      </ul>
+    </aside>
+
+    <article>
+      <section id="intro">
+        <h2>Introduction</h2>
+        <p>WikiLite is a simple HTML/CSS/JS clone of Wikipedia designed for learning how websites work.</p>
+      </section>
+
+      <section id="history">
+        <h2>History</h2>
+        <p>Wikipedia was launched on January 15, 2001, by Jimmy Wales and Larry Sanger.</p>
+      </section>
+
+      <section id="features">
+        <h2>Features</h2>
+        <ul>
+          <li>Free content</li>
+          <li>Open editing</li>
+          <li>Community moderation</li>
+        </ul>
+      </section>
+
+      <section id="legacy">
+        <h2>Legacy</h2>
+        <p>Wikipedia has become one of the most visited websites in the world.</p>
+      </section>
+    </article>
+  </main>
+
+  <footer>
+    <p>Built for learning purposes. Not affiliated with Wikipedia.</p>
+  </footer>
+
+<script>
+    const searchInput = document.getElementById("searchBar");
+
+searchInput.addEventListener("input", () => {
+  const keyword = searchInput.value.toLowerCase();
+  const sections = document.querySelectorAll("article section");
+
+  sections.forEach(section => {
+    const content = section.textContent.toLowerCase();
+    if (content.includes(keyword)) {
+      section.style.display = "block";
+    } else {
+      section.style.display = "none";
+    }
+  });
+});
+</script>
+    
+</body>
+</html>
